@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="pt-24 pb-12 bg-black text-gray-400 relative overflow-hidden border-t border-white/5">
+    <footer className="pt-24 pb-12 bg-transparent text-gray-400 relative overflow-hidden border-t border-white/5">
       {/* Grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
 

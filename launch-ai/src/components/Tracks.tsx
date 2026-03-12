@@ -18,7 +18,7 @@ export default function Tracks() {
   };
 
   return (
-    <section className="py-24 relative bg-[#050505]" id="tracks">
+    <section className="py-24 relative bg-transparent" id="tracks">
       <div className="container mx-auto px-6 max-w-[1200px] relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

@@ -16,10 +16,10 @@ export default function Marquee() {
   const items = [...words, ...words, ...words]; // Triple the array for seamless endless scrolling
 
   return (
-    <div className="w-full bg-[#0d0d12] border-y border-white/5 py-3 overflow-hidden flex relative z-10">
+    <div className="w-full border-y border-white/5 py-3 overflow-hidden flex relative z-10 bg-transparent">
       {/* Soft gradient fades on the edges */}
-      <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#0d0d12] to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#0d0d12] to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[var(--color-tech-bg)] to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[var(--color-tech-bg)] to-transparent z-10 pointer-events-none"></div>
 
       <motion.div
         className="flex whitespace-nowrap gap-12 text-[#b026ff]/60 font-medium tracking-widest text-xs uppercase"

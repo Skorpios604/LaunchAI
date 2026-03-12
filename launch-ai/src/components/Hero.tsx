@@ -17,10 +17,6 @@ export default function Hero() {
   return (
     <header ref={ref} className="min-h-[100vh] flex flex-col justify-center pt-32 pb-0 relative overflow-hidden" id="hero">
       
-      {/* Background Glows */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#b026ff] rounded-full mix-blend-screen filter blur-[150px] opacity-20 animate-pulse hidden md:block"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00f0ff] rounded-full mix-blend-screen filter blur-[150px] opacity-20 animate-pulse hidden md:block" style={{ animationDelay: "2s" }}></div>
-
       <motion.div 
         style={{ y: textY, opacity }}
         className="container mx-auto px-6 max-w-[1200px] mb-20 text-center flex flex-col items-center relative z-10"

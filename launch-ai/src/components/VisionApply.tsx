@@ -26,9 +26,7 @@ export default function VisionApply() {
   };
 
   return (
-    <section className="py-24 bg-[#0d0d12] relative overflow-hidden" id="apply">
-      {/* Background visual */}
-      <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-[#b026ff]/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <section className="py-24 bg-transparent relative overflow-hidden" id="apply">
 
       <div className="container mx-auto px-6 max-w-[1200px] relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

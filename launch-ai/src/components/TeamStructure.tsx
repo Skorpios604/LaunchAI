@@ -18,7 +18,7 @@ export default function TeamStructure() {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden bg-[#0d0d12]" id="how">
+    <section className="py-24 relative overflow-hidden bg-transparent" id="how">
       {/* HUD Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-50"></div>
 

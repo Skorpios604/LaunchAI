@@ -20,9 +20,6 @@ export default function Benefits() {
   return (
     <section className="py-24 relative overflow-hidden" id="benefits">
       
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#00f0ff]/5 rounded-[100%] blur-[100px] pointer-events-none"></div>
-
       <div className="container mx-auto px-6 max-w-[1200px] relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
