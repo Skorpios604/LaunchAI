@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 export default function Marquee() {
   const words = [
-    "SYS.ONLINE",
-    "RUNTIME.ACTIVE",
-    "MODELS.DEPLOYED",
-    "AGENTS.SYNCED",
-    "PIPELINE.SECURE",
-    "LATENCY.LOW",
-    "GPU.ALLOCATED",
-    "NETWORK.STABLE"
+    "REAL PROJECTS",
+    "REAL TEAMS",
+    "OPEN SOURCE",
+    "AI ENGINEERING",
+    "PORTFOLIO READY",
+    "CAREER GROWTH",
+    "SHIP CODE",
+    "BUILD WITH US"
   ];
   const items = [...words, ...words, ...words]; // Triple the array for seamless endless scrolling
 

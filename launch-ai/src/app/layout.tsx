@@ -15,8 +15,8 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "Launch AI // Engineering Cohort",
-  description: "Next-gen AI engineering training. Build production software with real teams.",
+  title: "LaunchAI — Collaborative AI Product Lab",
+  description: "Join a team. Build real AI products. Gain the experience you need to land your first AI engineering role.",
 };
 
 export default function RootLayout({

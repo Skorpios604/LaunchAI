@@ -59,7 +59,7 @@ export default function Navbar() {
             })}
             <li>
               <a href="#apply" className="tech-btn-primary text-xs py-2 px-6">
-                Initialize
+                Apply Now
               </a>
             </li>
           </ul>

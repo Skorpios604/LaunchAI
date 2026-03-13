@@ -1,6 +1,6 @@
 "use client";
 
-import { Cpu, Network, Link, Smile, Cloud, Box, Layers, Database, Layout, Zap, Palette, Server, ZapOff, Braces } from "lucide-react";
+import { Cpu, Cloud, Layout, Server } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
 export default function TechStack() {
@@ -31,10 +31,10 @@ export default function TechStack() {
             className="lg:w-1/3 mt-8 lg:sticky lg:top-32"
           >
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-tight" style={{ fontFamily: "var(--font-orbitron)" }}>
-              CURRENT <br className="hidden lg:block"/> DEPENDENCIES
+              OUR TECH <br className="hidden lg:block"/> STACK
             </h2>
             <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-              We compile applications utilizing the identical frameworks leveraged by hyper-growth tech startups. Bypass the tutorials. Write raw code.
+              We build with the same tools used at top AI startups. Real frameworks, real infrastructure — no toy projects.
             </p>
             <div className="w-16 h-1 bg-gradient-to-r from-[#00f0ff] to-[#b026ff] rounded shadow-[0_0_10px_#00f0ff]"></div>
           </motion.div>
@@ -54,21 +54,21 @@ export default function TechStack() {
               </h4>
               <ul className="space-y-4 font-mono text-xs md:text-sm text-gray-300">
                 <li className="flex items-center gap-3 bg-white/5 p-2 rounded border border-white/5 hover:border-[#00f0ff]/50 transition-colors">
-                  <span className="text-[#00f0ff]">{"<"}</span> Python & PyTorch <span className="text-[#00f0ff]">{" />"}</span>
+                  Python & PyTorch
                 </li>
                 <li className="flex items-center gap-3 bg-white/5 p-2 rounded border border-white/5 hover:border-[#00f0ff]/50 transition-colors">
-                  <span className="text-[#b026ff]">{"<"}</span> TensorFlow <span className="text-[#b026ff]">{" />"}</span>
+                  TensorFlow
                 </li>
                 <li className="flex items-center gap-3 bg-white/5 p-2 rounded border border-white/5 hover:border-[#00f0ff]/50 transition-colors">
-                  <span className="text-[#0a66c2]">{"<"}</span> LangChain <span className="text-[#0a66c2]">{" />"}</span>
+                  LangChain & Hugging Face
                 </li>
               </ul>
             </motion.div>
             
-            {/* Infra */}
+            {/* Infrastructure */}
             <motion.div variants={itemVariants} className="tech-glass-card p-8 group mt-0 sm:mt-12">
               <h4 className="flex items-center gap-3 mb-6 text-xl font-bold text-white tracking-wider" style={{ fontFamily: "var(--font-orbitron)" }}>
-                <Cloud className="text-[#b026ff] group-hover:animate-pulse" size={24} /> INFRA
+                <Cloud className="text-[#b026ff] group-hover:animate-pulse" size={24} /> INFRASTRUCTURE
               </h4>
               <ul className="space-y-4 font-mono text-xs md:text-sm text-gray-300">
                 <li className="flex items-center gap-3 bg-white/5 p-2 rounded border border-white/5 hover:border-[#b026ff]/50 transition-colors">
@@ -86,17 +86,17 @@ export default function TechStack() {
             {/* Frontend */}
             <motion.div variants={itemVariants} className="tech-glass-card p-8 group">
               <h4 className="flex items-center gap-3 mb-6 text-xl font-bold text-white tracking-wider" style={{ fontFamily: "var(--font-orbitron)" }}>
-                <Layout className="text-[#fce000] drop-shadow-[0_0_8px_#fce000]" size={24} /> CLIENT
+                <Layout className="text-[#fce000] drop-shadow-[0_0_8px_#fce000]" size={24} /> FRONTEND
               </h4>
               <ul className="space-y-4 font-mono text-xs md:text-sm text-gray-300">
                 <li className="flex items-center gap-3 bg-white/5 p-2 rounded border border-white/5 hover:border-[#fce000]/50 transition-colors">
-                  React 19 / DOM
+                  React 19
                 </li>
                 <li className="flex items-center gap-3 bg-white/5 p-2 rounded border border-white/5 hover:border-[#fce000]/50 transition-colors">
                   Next.js App Router
                 </li>
                 <li className="flex items-center gap-3 bg-white/5 p-2 rounded border border-white/5 hover:border-[#fce000]/50 transition-colors">
-                  Tailwind CSS + Motion
+                  Tailwind CSS & Framer Motion
                 </li>
               </ul>
             </motion.div>
@@ -108,7 +108,7 @@ export default function TechStack() {
               </h4>
               <ul className="space-y-4 font-mono text-xs md:text-sm text-gray-300">
                 <li className="flex items-center gap-3 bg-white/5 p-2 rounded border border-white/5 hover:border-[#00ff88]/50 transition-colors">
-                  Node.js Runtime
+                  Node.js
                 </li>
                 <li className="flex items-center gap-3 bg-white/5 p-2 rounded border border-white/5 hover:border-[#00ff88]/50 transition-colors">
                   FastAPI / Python

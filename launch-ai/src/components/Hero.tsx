@@ -16,21 +16,21 @@ export default function Hero() {
   return (
     <AnimatedShaderHero
       trustBadge={{
-        text: "System Online // Cohort 1 Active",
+        text: "Now Enrolling — Cohort 1",
         icons: ["🚀"]
       }}
       headline={{
-        line1: "BUILD FUTURE APPS",
-        line2: "WITH REAL SQUADS"
+        line1: "ESCAPE TUTORIALS",
+        line2: "BUILD REAL PRODUCTS"
       }}
-      subtitle="Escape tutorial. Enter the matrix of production-grade engineering. Ship LLM architectures, construct vector pipelines, and compile a verifiable portfolio."
+      subtitle="Stop watching courses. Start building production AI with real teams. Ship LLM apps, train models, and walk away with a portfolio that proves you can do the job."
       buttons={{
         primary: {
-          text: "Deploy Application",
+          text: "Apply Now",
           onClick: handlePrimaryClick
         },
         secondary: {
-          text: "View Architecture",
+          text: "See How It Works",
           onClick: handleSecondaryClick
         }
       }}

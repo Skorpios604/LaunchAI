@@ -29,10 +29,10 @@ export default function Benefits() {
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white tracking-tight leading-tight">
-            ACCELERATE <br/> <span className="text-neon-gradient">VELOCITY.</span>
+            WHAT YOU <br/> <span className="text-neon-gradient">GET.</span>
           </h2>
           <p className="text-lg text-gray-400">
-            Provisioning the infrastructure, talent density, and computational resources required to deploy AI at scale.
+            Everything you need to land your first AI engineering role — real experience, not certificates.
           </p>
         </motion.div>
 
@@ -49,10 +49,10 @@ export default function Benefits() {
               <Rocket size={24} strokeWidth={1.5} />
             </div>
             <h3 className="text-lg font-semibold mb-3 text-white tracking-wide uppercase text-sm">
-              Live Endpoints
+              Real Project Experience
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Compile and deploy LLM microservices and autonomous agents into production environments.
+              Build and deploy production AI apps — LLM tools, ML models, AI agents, and data pipelines.
             </p>
           </motion.div>
           
@@ -62,10 +62,10 @@ export default function Benefits() {
               <Github size={24} strokeWidth={1.5} />
             </div>
             <h3 className="text-lg font-semibold mb-3 text-white tracking-wide uppercase text-sm">
-              Commit History
+              GitHub Portfolio
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Generate a high-signal open-source footprint to bypass automated resume filters.
+              Walk away with open-source contributions and shipped products that prove your skills to employers.
             </p>
           </motion.div>
           
@@ -75,10 +75,10 @@ export default function Benefits() {
               <Users size={24} strokeWidth={1.5} />
             </div>
             <h3 className="text-lg font-semibold mb-3 text-white tracking-wide uppercase text-sm">
-              Node Network
+              Team Collaboration
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Integrate with highly concurrent, cross-functional engineering pods of top-tier talent.
+              Work alongside engineers, designers, and product leads in cross-functional teams of 5–7.
             </p>
           </motion.div>
           
@@ -88,10 +88,10 @@ export default function Benefits() {
               <Sparkles size={24} strokeWidth={1.5} />
             </div>
             <h3 className="text-lg font-semibold mb-3 text-white tracking-wide uppercase text-sm">
-              Admin Access
+              Mentorship
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Download architectural patterns and code review cycles directly from senior staff.
+              Get code reviews, architectural guidance, and career advice from experienced engineers.
             </p>
           </motion.div>
         </motion.div>
