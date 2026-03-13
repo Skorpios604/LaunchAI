@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Network, Rocket, Terminal, Mail } from "lucide-react";
+import AnimatedGenerateButton from "@/components/ui/animated-generate-button";
 import { motion } from "framer-motion";
 
 export default function VisionApply() {
@@ -134,22 +135,15 @@ export default function VisionApply() {
                 </div>
 
                 <div className="pt-4">
-                  <button
+                  <AnimatedGenerateButton
                     type="submit"
                     disabled={isSubmitting}
-                    className="tech-btn-primary w-full py-4 relative group"
-                  >
-                    {isSubmitting ? (
-                      <span className="flex items-center gap-2">
-                        <span className="w-4 h-4 border-2 border-[#00f0ff] border-t-transparent rounded-full animate-spin"></span>
-                        Submitting...
-                      </span>
-                    ) : (
-                      <span className="flex items-center gap-2">
-                        Submit Application
-                      </span>
-                    )}
-                  </button>
+                    generating={isSubmitting}
+                    labelIdle="Submit Application"
+                    labelActive="Submitting..."
+                    highlightHueDeg={185}
+                    className="w-full"
+                  />
                   <p className="text-[10px] text-gray-500 font-mono text-center mt-4">
                     Your information is secure and will never be shared.
                   </p>

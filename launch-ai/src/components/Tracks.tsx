@@ -1,6 +1,7 @@
 "use client";
 
 import { Compass, Bot, GitBranch, CheckSquare } from "lucide-react";
+import AnimatedGenerateButton from "@/components/ui/animated-generate-button";
 import { motion, Variants } from "framer-motion";
 
 export default function Tracks() {
@@ -67,7 +68,9 @@ export default function Tracks() {
                 <li className="flex items-start gap-3"><CheckSquare className="text-[#0a66c2] shrink-0 mt-0.5" size={16} /> Data Analysis</li>
                 <li className="flex items-start gap-3"><CheckSquare className="text-[#0a66c2] shrink-0 mt-0.5" size={16} /> API Development</li>
               </ul>
-              <a href="#apply" className="tech-btn-primary w-full mt-auto" style={{ border: "1px solid #0a66c2", color: "#0a66c2", boxShadow: "none" }}>Get Started</a>
+              <a href="#apply" className="w-full mt-auto block">
+                <AnimatedGenerateButton labelIdle="Get Started" labelActive="Get Started" highlightHueDeg={210} className="w-full" />
+              </a>
             </div>
           </motion.div>
 
@@ -99,7 +102,9 @@ export default function Tracks() {
                 <li className="flex items-start gap-3"><CheckSquare className="text-[#00f0ff] shrink-0 mt-0.5" size={16} /> Model Deployment</li>
                 <li className="flex items-start gap-3"><CheckSquare className="text-[#00f0ff] shrink-0 mt-0.5" size={16} /> AI Agent Development</li>
               </ul>
-              <a href="#apply" className="tech-btn-primary w-full mt-auto">Apply Now</a>
+              <a href="#apply" className="w-full mt-auto block">
+                <AnimatedGenerateButton labelIdle="Apply Now" labelActive="Apply Now" highlightHueDeg={185} className="w-full" />
+              </a>
             </div>
           </motion.div>
 
@@ -124,7 +129,9 @@ export default function Tracks() {
                 <li className="flex items-start gap-3"><CheckSquare className="text-[#b026ff] shrink-0 mt-0.5" size={16} /> CI/CD & MLOps</li>
                 <li className="flex items-start gap-3"><CheckSquare className="text-[#b026ff] shrink-0 mt-0.5" size={16} /> Hyperparameter Tuning</li>
               </ul>
-              <a href="#apply" className="tech-btn-primary w-full mt-auto" style={{ border: "1px solid #b026ff", color: "#b026ff", boxShadow: "none" }}>Get Started</a>
+              <a href="#apply" className="w-full mt-auto block">
+                <AnimatedGenerateButton labelIdle="Get Started" labelActive="Get Started" highlightHueDeg={275} className="w-full" />
+              </a>
             </div>
           </motion.div>
 

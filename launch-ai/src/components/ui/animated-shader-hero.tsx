@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
+import AnimatedGenerateButton from "@/components/ui/animated-generate-button";
 
 // Types for component props
 export interface HeroProps {
@@ -439,23 +440,24 @@ const AnimatedShaderHero: React.FC<HeroProps> = ({
           
           {/* CTA Buttons with Animation */}
           {buttons && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12 animate-fade-in-up animation-delay-800">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12 animate-fade-in-up animation-delay-800">
               {buttons.primary && (
-                <button 
+                <AnimatedGenerateButton
+                  labelIdle={buttons.primary.text}
+                  labelActive={buttons.primary.text}
                   onClick={buttons.primary.onClick}
-                  className="px-10 py-4 bg-transparent border border-[#00f0ff] text-[#00f0ff] uppercase tracking-widest font-semibold text-sm transition-all duration-300 hover:bg-[#00f0ff] hover:text-black hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] relative overflow-hidden group" style={{ fontFamily: "var(--font-orbitron)" }}
-                >
-                  <span className="relative z-10">{buttons.primary.text}</span>
-                  <div className="absolute inset-0 h-full w-full bg-[#00f0ff] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                </button>
+                  highlightHueDeg={185}
+                  className="text-sm font-semibold uppercase tracking-widest"
+                />
               )}
               {buttons.secondary && (
-                <button 
+                <AnimatedGenerateButton
+                  labelIdle={buttons.secondary.text}
+                  labelActive={buttons.secondary.text}
                   onClick={buttons.secondary.onClick}
-                  className="px-10 py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white uppercase tracking-widest font-semibold text-sm transition-all duration-300 backdrop-blur-sm"
-                >
-                  {buttons.secondary.text}
-                </button>
+                  highlightHueDeg={270}
+                  className="text-sm font-semibold uppercase tracking-widest"
+                />
               )}
             </div>
           )}

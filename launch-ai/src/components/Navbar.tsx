@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Hexagon } from "lucide-react";
+import AnimatedGenerateButton from "@/components/ui/animated-generate-button";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
@@ -58,8 +59,13 @@ export default function Navbar() {
               );
             })}
             <li>
-              <a href="#apply" className="tech-btn-primary text-xs py-2 px-6">
-                Apply Now
+              <a href="#apply">
+                <AnimatedGenerateButton
+                  labelIdle="Apply Now"
+                  labelActive="Apply Now"
+                  highlightHueDeg={185}
+                  className="text-xs"
+                />
               </a>
             </li>
           </ul>
