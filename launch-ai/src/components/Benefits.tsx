@@ -14,8 +14,8 @@ function RocketLaunch() {
   useEffect(() => {
     const interval = setInterval(() => {
       setLaunched(true);
-      setTimeout(() => setLaunched(false), 2000);
-    }, 3500);
+      setTimeout(() => setLaunched(false), 3000);
+    }, 4500);
     return () => clearInterval(interval);
   }, []);
 
@@ -26,14 +26,14 @@ function RocketLaunch() {
         className="relative z-10"
         animate={
           launched
-            ? { y: [0, -400], opacity: [1, 1, 0] }
+            ? { y: [0, -800], opacity: [1, 1, 0] }
             : { y: 0, opacity: 1 }
         }
-        transition={{
-          duration: 2,
+        transition={launched ? {
+          duration: 3,
           ease: "linear",
           times: [0, 1]
-        }}
+        } : { duration: 0 }}
       >
         <div className="relative">
           <Rocket
