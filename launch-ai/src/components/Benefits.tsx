@@ -14,8 +14,8 @@ function RocketLaunch() {
   useEffect(() => {
     const interval = setInterval(() => {
       setLaunched(true);
-      setTimeout(() => setLaunched(false), 3000);
-    }, 4500);
+      setTimeout(() => setLaunched(false), 4000);
+    }, 5500);
     return () => clearInterval(interval);
   }, []);
 
@@ -30,7 +30,7 @@ function RocketLaunch() {
             : { y: 0, opacity: 1 }
         }
         transition={launched ? {
-          duration: 3,
+          duration: 2,
           ease: "linear",
           times: [0, 1]
         } : { duration: 0 }}
