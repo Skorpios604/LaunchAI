@@ -60,7 +60,6 @@ export default function AnimatedGenerateButton({
           "rounded-[4px] px-4 py-2",
           "bg-[hsl(var(--background))] text-[hsl(var(--foreground))]",
           "border border-[hsl(var(--border))]/20",
-          "shadow-[inset_0px_1px_1px_rgba(255,255,255,0.2),inset_0px_2px_2px_rgba(255,255,255,0.15),inset_0px_4px_4px_rgba(255,255,255,0.1),inset_0px_8px_8px_rgba(255,255,255,0.05),inset_0px_16px_16px_rgba(255,255,255,0.05),0_-1px_1px_rgba(0,0,0,0.02),0_-2px_2px_rgba(0,0,0,0.03),0_-4px_4px_rgba(0,0,0,0.05),0_-8px_8px_rgba(0,0,0,0.06),0_-16px_16px_rgba(0,0,0,0.08)]",
           "transition-[box-shadow,border,background-color] duration-400"
         )}
         style={
@@ -145,13 +144,7 @@ export default function AnimatedGenerateButton({
           background-image: linear-gradient(0deg, #0004, #000a);
           z-index: -1;
           transition: box-shadow var(--transition), filter var(--transition);
-          box-shadow:
-            0 -8px 8px -6px #0000 inset,
-            0 -16px 16px -8px #00000000 inset,
-            1px 1px 1px #fff2,
-            2px 2px 2px #fff1,
-            -1px -1px 1px #0002,
-            -2px -2px 2px #0001;
+          box-shadow: none;
         }
 
         .ui-anim-btn::after {
@@ -248,13 +241,7 @@ export default function AnimatedGenerateButton({
         }
 
         .ui-anim-btn:focus::before {
-          box-shadow:
-            0 -8px 12px -6px #fff3 inset,
-            0 -16px 16px -8px var(--highlight-20) inset,
-            1px 1px 1px #fff3,
-            2px 2px 2px #fff1,
-            -1px -1px 1px #0002,
-            -2px -2px 2px #0001;
+          box-shadow: none;
         }
         .ui-anim-btn:focus::after {
           opacity: 0.6;
@@ -268,13 +255,7 @@ export default function AnimatedGenerateButton({
           border-color: hsla(var(--highlight-hue), 100%, 80%, 0.4);
         }
         .ui-anim-btn:hover::before {
-          box-shadow:
-            0 -8px 8px -6px #fffa inset,
-            0 -16px 16px -8px var(--highlight-30) inset,
-            1px 1px 1px #fff2,
-            2px 2px 2px #fff1,
-            -1px -1px 1px #0002,
-            -2px -2px 2px #0001;
+          box-shadow: none;
         }
         .ui-anim-btn:hover::after {
           opacity: 1;
@@ -295,13 +276,7 @@ export default function AnimatedGenerateButton({
           background-color: hsla(var(--highlight-hue), 50%, 20%, 0.5);
         }
         .ui-anim-btn:active::before {
-          box-shadow:
-            0 -8px 12px -6px #fffa inset,
-            0 -16px 16px -8px var(--highlight-80) inset,
-            1px 1px 1px #fff4,
-            2px 2px 2px #fff2,
-            -1px -1px 1px #0002,
-            -2px -2px 2px #0001;
+          box-shadow: none;
         }
         .ui-anim-btn:active::after {
           opacity: 1;
@@ -322,13 +297,7 @@ export default function AnimatedGenerateButton({
           animation-delay: 0s, 1.4s;
         }
         .ui-anim-btn.ui-anim-clicked::before {
-          box-shadow:
-            0 -8px 12px -6px #fffa inset,
-            0 -16px 16px -8px var(--highlight-80) inset,
-            1px 1px 1px #fff4,
-            2px 2px 2px #fff2,
-            -1px -1px 1px #0002,
-            -2px -2px 2px #0001;
+          box-shadow: none;
         }
         .ui-anim-btn.ui-anim-clicked::after {
           opacity: 1;
