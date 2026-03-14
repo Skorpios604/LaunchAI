@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useRef, useCallback } from "react";
 import clsx from "clsx";
 
 export type AnimatedGenerateButtonProps = {
@@ -26,14 +27,33 @@ export default function AnimatedGenerateButton({
   id,
   ariaLabel,
 }: AnimatedGenerateButtonProps) {
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleClick = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    const btn = btnRef.current;
+    if (!btn) return;
+    // Clear any existing timeout so rapid clicks restart the animation
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    btn.classList.remove('ui-anim-clicked');
+    // Force reflow so re-adding the class restarts the animation
+    void btn.offsetWidth;
+    btn.classList.add('ui-anim-clicked');
+    timeoutRef.current = setTimeout(() => {
+      btn.classList.remove('ui-anim-clicked');
+    }, 700);
+    onClick?.(e);
+  }, [onClick]);
+
   return (
     <div className={clsx("relative inline-block", className)} id={id}>
       <button
+        ref={btnRef}
         type={type}
         aria-label={ariaLabel || (generating ? labelActive : labelIdle)}
         aria-pressed={generating}
         disabled={disabled}
-        onClick={onClick}
+        onClick={handleClick}
         className={clsx(
           "ui-anim-btn",
           "relative flex items-center justify-center cursor-pointer select-none",
@@ -291,10 +311,30 @@ export default function AnimatedGenerateButton({
         }
         .ui-anim-btn:active .ui-anim-letter {
           text-shadow: 0 0 1px hsla(var(--highlight-hue), 100%, 90%, 0.9);
+        }
+
+        /* Smoke effect on click — class added/removed via JS */
+        .ui-anim-btn.ui-anim-clicked .ui-anim-letter {
+          text-shadow: 0 0 1px hsla(var(--highlight-hue), 100%, 90%, 0.9);
           animation:
             ui-focused-letter 0.6s ease-in-out forwards,
             ui-letter-anim 1.2s ease-in-out infinite;
           animation-delay: 0s, 0.6s;
+        }
+        .ui-anim-btn.ui-anim-clicked::before {
+          box-shadow:
+            0 -8px 12px -6px #fffa inset,
+            0 -16px 16px -8px var(--highlight-80) inset,
+            1px 1px 1px #fff4,
+            2px 2px 2px #fff2,
+            -1px -1px 1px #0002,
+            -2px -2px 2px #0001;
+        }
+        .ui-anim-btn.ui-anim-clicked::after {
+          opacity: 1;
+          -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
+          mask-image: linear-gradient(0deg, #fff, transparent);
+          filter: brightness(200%);
         }
 
         /* Letter stagger delays */
