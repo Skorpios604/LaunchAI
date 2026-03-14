@@ -14,8 +14,8 @@ function RocketLaunch() {
   useEffect(() => {
     const interval = setInterval(() => {
       setLaunched(true);
-      setTimeout(() => setLaunched(false), 4000);
-    }, 5500);
+      setTimeout(() => setLaunched(false), 2000);
+    }, 3500);
     return () => clearInterval(interval);
   }, []);
 
@@ -37,28 +37,44 @@ function RocketLaunch() {
       >
         <div className="relative">
           <Rocket
-            className="text-[#00f0ff] -rotate-45 drop-shadow-[0_0_12px_rgba(0,240,255,0.6)]"
+            className="text-[#00f0ff] -rotate-45 drop-shadow-[0_0_15px_rgba(0,240,255,0.8)]"
             size={40}
             strokeWidth={1.5}
           />
-          {/* Exhaust Trail */}
+          
+          {/* Enhanced Engine Core Glow */}
+          {launched && (
+            <motion.div
+              className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-8 bg-gradient-to-t from-transparent via-[#00f0ff80] to-[#00f0ff] blur-[2px] rounded-full z-[-1]"
+              animate={{ opacity: [0.6, 1, 0.6], scaleX: [1, 1.2, 1] }}
+              transition={{ duration: 0.1, repeat: Infinity }}
+            />
+          )}
+
+          {/* Prompt Exhaust Trail */}
           <AnimatePresence>
             {launched &&
-              Array.from({ length: 6 }).map((_, i) => (
+              Array.from({ length: 12 }).map((_, i) => (
                 <motion.div
                   key={`trail-${i}`}
-                  className="absolute left-1/2 -translate-x-1/2 rounded-full"
+                  className="absolute left-1/2"
                   style={{
-                    width: 4,
-                    height: 12,
-                    bottom: -15,
-                    background: "linear-gradient(to top, transparent, #00f0ff)",
+                    width: 4 + Math.random() * 3,
+                    height: 15 + Math.random() * 10,
+                    bottom: -20,
+                    background: "linear-gradient(to top, transparent, #b026ff, #00f0ff)",
+                    filter: "blur(1px)",
                   }}
-                  initial={{ opacity: 0.8, scaleY: 1 }}
-                  animate={{ opacity: 0, scaleY: 2, y: 20 }}
+                  initial={{ opacity: 0.9, scaleY: 1, x: "-50%" }}
+                  animate={{ 
+                    opacity: 0, 
+                    scaleY: 2, 
+                    y: 40 + Math.random() * 20,
+                    x: ["-50%", `${-50 + (Math.random() - 0.5) * 15}%`]
+                  }}
                   transition={{
-                    duration: 0.4,
-                    delay: i * 0.1,
+                    duration: 0.5,
+                    delay: i * 0.05,
                     repeat: Infinity
                   }}
                 />
