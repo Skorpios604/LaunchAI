@@ -193,7 +193,7 @@ function MentorshipPulse() {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <svg viewBox="0 0 100 100" className="w-full h-full max-w-[180px] max-h-[180px]">
+      <svg viewBox="0 0 100 100" className="w-full h-full">
         {/* Connection lines from mentor to each student */}
         {students.map((s, i) => (
           <line
@@ -269,7 +269,7 @@ export default function Benefits() {
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[220px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[240px]">
           {/* 1. Real Project Experience — Tall (2×2) */}
           <motion.div
             className="md:col-span-2 md:row-span-2 tech-glass-card p-8 flex flex-col cursor-pointer"

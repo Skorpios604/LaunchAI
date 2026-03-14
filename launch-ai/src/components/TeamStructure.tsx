@@ -26,7 +26,7 @@ function NeuralNetwork() {
 
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <svg viewBox="0 0 100 110" className="w-full h-full max-w-[200px] max-h-[180px]">
+      <svg viewBox="0 0 100 110" className="w-full h-full">
         {layers.slice(0, -1).map((layer, li) =>
           layer.map((from, fi) =>
             layers[li + 1].map((to, ti) => (
@@ -185,7 +185,7 @@ function LayoutMorph() {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <motion.div
-        className={`grid ${layouts[layout]} gap-1.5 w-full max-w-[140px]`}
+        className={`grid ${layouts[layout]} gap-1.5 w-full max-w-[180px]`}
         layout
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
@@ -228,7 +228,7 @@ function DataFunnel() {
 
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <svg viewBox="0 0 100 80" className="w-full max-w-[200px]">
+      <svg viewBox="0 0 100 80" className="w-full h-full">
         {/* Funnel outline */}
         <path d="M15 10 L85 10 L60 45 L60 70 L40 70 L40 45 Z" fill="none" stroke="#b026ff20" strokeWidth={0.8} />
         {/* Stage labels */}
@@ -302,7 +302,7 @@ export default function TeamStructure() {
         </motion.div>
 
         {/* Bento Grid — 6 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 auto-rows-[200px]">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 auto-rows-[240px]">
 
           {/* AI/ML Engineers — Featured Tall (2-col, 2-row) */}
           <motion.div
