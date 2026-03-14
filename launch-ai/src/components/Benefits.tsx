@@ -14,77 +14,71 @@ function RocketLaunch() {
   useEffect(() => {
     const interval = setInterval(() => {
       setLaunched(true);
-      setTimeout(() => setLaunched(false), 2200);
-    }, 4000);
+      setTimeout(() => setLaunched(false), 2000);
+    }, 3500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-full h-full overflow-hidden flex items-end justify-center pb-4">
-      {/* Exhaust trail particles */}
-      <AnimatePresence>
-        {launched &&
-          Array.from({ length: 12 }).map((_, i) => (
-            <motion.div
-              key={`trail-${i}`}
-              className="absolute rounded-full"
-              style={{
-                width: 4 + Math.random() * 4,
-                height: 4 + Math.random() * 4,
-                left: `calc(50% + ${(Math.random() - 0.5) * 20}px)`,
-                bottom: "15%",
-                background: i % 3 === 0 ? "#00f0ff" : i % 3 === 1 ? "#b026ff" : "#ffffff",
-              }}
-              initial={{ y: 0, opacity: 0.9, scale: 1 }}
-              animate={{
-                y: [0, 30 + Math.random() * 60],
-                opacity: [0.9, 0],
-                scale: [1, 0.2],
-                x: [(Math.random() - 0.5) * 10, (Math.random() - 0.5) * 30],
-              }}
-              exit={{ opacity: 0 }}
-              transition={{
-                duration: 1 + Math.random() * 0.5,
-                delay: i * 0.08,
-                ease: "easeOut",
-              }}
-            />
-          ))}
-      </AnimatePresence>
-
-      {/* Glow underneath rocket */}
-      <motion.div
-        className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-8 h-8 rounded-full"
-        animate={{
-          opacity: launched ? [0, 0.6, 0] : 0,
-          scale: launched ? [0.5, 2, 2.5] : 0.5,
-        }}
-        transition={{ duration: 1.5 }}
-        style={{
-          background: "radial-gradient(circle, #00f0ff60 0%, transparent 70%)",
-        }}
-      />
-
-      {/* Rocket */}
+    <div className="relative w-full h-full overflow-hidden flex items-end justify-center pb-12">
+      {/* Straight Vertical Rocket */}
       <motion.div
         className="relative z-10"
         animate={
           launched
-            ? { y: [0, -10, -200], scale: [1, 1.1, 0.7] }
-            : { y: 0, scale: 1 }
+            ? { y: [0, -400], opacity: [1, 1, 0] }
+            : { y: 0, opacity: 1 }
         }
         transition={{
-          duration: 1.8,
-          ease: [0.2, 0.8, 0.2, 1],
-          times: [0, 0.15, 1],
+          duration: 2,
+          ease: "linear",
+          times: [0, 1]
         }}
       >
-        <Rocket
-          className="text-[#00f0ff] -rotate-45 drop-shadow-[0_0_12px_rgba(0,240,255,0.6)]"
-          size={40}
-          strokeWidth={1.5}
-        />
+        <div className="relative">
+          <Rocket
+            className="text-[#00f0ff] drop-shadow-[0_0_12px_rgba(0,240,255,0.6)]"
+            size={40}
+            strokeWidth={1.5}
+          />
+          {/* Exhaust Trail */}
+          <AnimatePresence>
+            {launched &&
+              Array.from({ length: 6 }).map((_, i) => (
+                <motion.div
+                  key={`trail-${i}`}
+                  className="absolute left-1/2 -translate-x-1/2 rounded-full"
+                  style={{
+                    width: 4,
+                    height: 12,
+                    bottom: -15,
+                    background: "linear-gradient(to top, transparent, #00f0ff)",
+                  }}
+                  initial={{ opacity: 0.8, scaleY: 1 }}
+                  animate={{ opacity: 0, scaleY: 2, y: 20 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: i * 0.1,
+                    repeat: Infinity
+                  }}
+                />
+              ))}
+          </AnimatePresence>
+        </div>
       </motion.div>
+
+      {/* Launch Glow */}
+      <motion.div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full"
+        animate={{
+          opacity: launched ? [0, 0.4, 0] : 0,
+          scale: launched ? [1, 2, 0.5] : 1,
+        }}
+        transition={{ duration: 1 }}
+        style={{
+          background: "radial-gradient(circle, #00f0ff60 0%, transparent 70%)",
+        }}
+      />
     </div>
   );
 }

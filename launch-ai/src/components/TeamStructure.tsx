@@ -9,53 +9,89 @@ import { motion } from "framer-motion";
    connections glowing as "data" flows through. Represents AI/ML work.
 */
 function NeuralNetwork() {
-  const [pulse, setPulse] = useState(0);
+  const [step, setStep] = useState(0);
+
+  const nodes = [
+    { x: 20, y: 30, id: "i1" }, { x: 20, y: 55, id: "i2" }, { x: 20, y: 80, id: "i3" }, // Layer 1
+    { x: 50, y: 20, id: "h1" }, { x: 50, y: 43, id: "h2" }, { x: 50, y: 66, id: "h3" }, { x: 50, y: 90, id: "h4" }, // Layer 2
+    { x: 80, y: 35, id: "o1" }, { x: 80, y: 60, id: "o2" }, { x: 80, y: 85, id: "o3" }, // Layer 3
+  ];
+
+  // Define a sequence of "actions": { type: 'node' | 'line', id: string, from?: number, to?: number }
+  const sequence: ( { type: 'node'; index: number } | { type: 'line'; from: number; to: number } )[] = [
+    { type: 'node', index: 0 },
+    { type: 'line', from: 0, to: 3 },
+    { type: 'node', index: 3 },
+    { type: 'line', from: 3, to: 7 },
+    { type: 'node', index: 7 },
+    { type: 'node', index: 1 },
+    { type: 'line', from: 1, to: 4 },
+    { type: 'node', index: 4 },
+    { type: 'line', from: 4, to: 8 },
+    { type: 'node', index: 8 },
+    { type: 'node', index: 2 },
+    { type: 'line', from: 2, to: 5 },
+    { type: 'node', index: 5 },
+    { type: 'line', from: 5, to: 9 },
+    { type: 'node', index: 9 },
+    { type: 'line', from: 2, to: 6 },
+    { type: 'node', index: 6 },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPulse((prev) => (prev + 1) % 4);
-    }, 1200);
+      setStep((prev) => (prev >= sequence.length + 5 ? 0 : prev + 1));
+    }, 500);
     return () => clearInterval(interval);
-  }, []);
-
-  const layers = [
-    [{ x: 20, y: 25 }, { x: 20, y: 55 }, { x: 20, y: 85 }],
-    [{ x: 50, y: 15 }, { x: 50, y: 40 }, { x: 50, y: 65 }, { x: 50, y: 90 }],
-    [{ x: 80, y: 30 }, { x: 80, y: 60 }, { x: 80, y: 90 }],
-  ];
+  }, [sequence.length]);
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <svg viewBox="0 0 100 110" className="w-full h-full">
-        {layers.slice(0, -1).map((layer, li) =>
-          layer.map((from, fi) =>
-            layers[li + 1].map((to, ti) => (
-              <motion.line
-                key={`${li}-${fi}-${ti}`}
-                x1={from.x} y1={from.y} x2={to.x} y2={to.y}
-                stroke={pulse === li || pulse === li + 1 ? "#00f0ff" : "#ffffff15"}
-                strokeWidth={0.5}
-                animate={{ opacity: pulse === li ? [0.3, 1, 0.3] : 0.2 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-              />
-            ))
-          )
-        )}
-        {layers.map((layer, li) =>
-          layer.map((node, ni) => (
-            <motion.circle
-              key={`n-${li}-${ni}`}
-              cx={node.x} cy={node.y} r={3}
-              fill={pulse === li ? "#00f0ff" : "#ffffff30"}
-              animate={{
-                r: pulse === li ? [3, 4.5, 3] : 3,
-                opacity: pulse === li ? [0.5, 1, 0.5] : 0.4,
+    <div className="w-full h-full flex items-center justify-center p-4">
+      <svg viewBox="0 0 100 110" className="w-full h-full overflow-visible">
+        {/* Draw all lines, only some will animate */}
+        {sequence.map((item, i) => {
+          if (item.type !== 'line') return null;
+          const from = nodes[item.from];
+          const to = nodes[item.to];
+          const active = i < step;
+          const isCurrent = i === step - 1;
+
+          return (
+            <motion.line
+              key={`l-${i}`}
+              x1={from.x} y1={from.y} x2={to.x} y2={to.y}
+              stroke={active ? "#00f0ff" : "#ffffff05"}
+              strokeWidth={active ? 1 : 0.4}
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ 
+                pathLength: active ? 1 : 0,
+                opacity: active ? (isCurrent ? [0.2, 1, 0.8] : 0.8) : 0.1,
               }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              style={{ filter: pulse === li ? "drop-shadow(0 0 4px #00f0ff)" : "none" }}
+              transition={{ duration: 0.4 }}
             />
-          ))
-        )}
+          );
+        })}
+
+        {/* Draw all nodes */}
+        {nodes.map((node, i) => {
+          const firstOccurrence = sequence.findIndex(s => s.type === 'node' && s.index === i);
+          const active = firstOccurrence !== -1 && firstOccurrence < step;
+          const isCurrent = firstOccurrence !== -1 && firstOccurrence === step - 1;
+
+          return (
+            <motion.circle
+              key={`n-${i}`}
+              cx={node.x} cy={node.y} r={active ? 3 : 2.5}
+              fill={active ? "#00f0ff" : "#ffffff10"}
+              animate={{
+                scale: isCurrent ? [1, 1.5, 1] : 1,
+                opacity: active ? 1 : 0.2,
+              }}
+              transition={{ duration: 0.4 }}
+              style={{ filter: active ? "drop-shadow(0 0 6px #00f0ff)" : "none" }}
+            />
+          );
+        })}
       </svg>
     </div>
   );
