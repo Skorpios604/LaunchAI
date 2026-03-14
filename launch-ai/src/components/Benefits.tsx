@@ -37,15 +37,15 @@ function RocketLaunch() {
       >
         <div className="relative">
           <Rocket
-            className="text-[#00f0ff] -rotate-45 drop-shadow-[0_0_15px_rgba(0,240,255,0.8)]"
-            size={40}
+            className="text-[#00f0ff] -rotate-45 drop-shadow-[0_0_20px_rgba(0,240,255,0.8)]"
+            size={80}
             strokeWidth={1.5}
           />
           
           {/* Enhanced Engine Core Glow */}
           {launched && (
             <motion.div
-              className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-8 bg-gradient-to-t from-transparent via-[#00f0ff80] to-[#00f0ff] blur-[2px] rounded-full z-[-1]"
+              className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-12 bg-gradient-to-t from-transparent via-[#00f0ff80] to-[#00f0ff] blur-[3px] rounded-full z-[-1]"
               animate={{ opacity: [0.6, 1, 0.6], scaleX: [1, 1.2, 1] }}
               transition={{ duration: 0.1, repeat: Infinity }}
             />
@@ -59,21 +59,21 @@ function RocketLaunch() {
                   key={`trail-${i}`}
                   className="absolute left-1/2"
                   style={{
-                    width: 4 + Math.random() * 3,
-                    height: 15 + Math.random() * 10,
-                    bottom: -20,
+                    width: 8 + Math.random() * 6,
+                    height: 25 + Math.random() * 15,
+                    bottom: -30,
                     background: "linear-gradient(to top, transparent, #b026ff, #00f0ff)",
-                    filter: "blur(1px)",
+                    filter: "blur(2px)",
                   }}
                   initial={{ opacity: 0.9, scaleY: 1, x: "-50%" }}
                   animate={{ 
                     opacity: 0, 
                     scaleY: 2, 
-                    y: 40 + Math.random() * 20,
+                    y: 60 + Math.random() * 30,
                     x: ["-50%", `${-50 + (Math.random() - 0.5) * 15}%`]
                   }}
                   transition={{
-                    duration: 0.5,
+                    duration: 0.6,
                     delay: i * 0.05,
                     repeat: Infinity
                   }}
