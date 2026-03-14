@@ -12,67 +12,77 @@ function NeuralNetwork() {
   const [step, setStep] = useState(0);
 
   const nodes = [
-    { x: 20, y: 30, id: "i1" }, { x: 20, y: 55, id: "i2" }, { x: 20, y: 80, id: "i3" }, // Layer 1
-    { x: 50, y: 20, id: "h1" }, { x: 50, y: 43, id: "h2" }, { x: 50, y: 66, id: "h3" }, { x: 50, y: 90, id: "h4" }, // Layer 2
-    { x: 80, y: 35, id: "o1" }, { x: 80, y: 60, id: "o2" }, { x: 80, y: 85, id: "o3" }, // Layer 3
+    { x: 20, y: 30 }, { x: 20, y: 55 }, { x: 20, y: 80 }, // Layer 0: Input (0,1,2)
+    { x: 50, y: 20 }, { x: 50, y: 43 }, { x: 50, y: 66 }, { x: 50, y: 90 }, // Layer 1: Hidden (3,4,5,6)
+    { x: 80, y: 35 }, { x: 80, y: 60 }, { x: 80, y: 85 }, // Layer 2: Output (7,8,9)
   ];
 
-  // Define a sequence of "actions": { type: 'node' | 'line', id: string, from?: number, to?: number }
-  const sequence: ( { type: 'node'; index: number } | { type: 'line'; from: number; to: number } )[] = [
-    { type: 'node', index: 0 },
-    { type: 'line', from: 0, to: 3 },
-    { type: 'node', index: 3 },
-    { type: 'line', from: 3, to: 7 },
-    { type: 'node', index: 7 },
-    { type: 'node', index: 1 },
-    { type: 'line', from: 1, to: 4 },
-    { type: 'node', index: 4 },
-    { type: 'line', from: 4, to: 8 },
-    { type: 'node', index: 8 },
-    { type: 'node', index: 2 },
-    { type: 'line', from: 2, to: 5 },
-    { type: 'node', index: 5 },
-    { type: 'line', from: 5, to: 9 },
-    { type: 'node', index: 9 },
-    { type: 'line', from: 2, to: 6 },
-    { type: 'node', index: 6 },
+  // Full-connectivity sequence: every node and every edge
+  // Layer 0 -> Layer 1 connections: 3 * 4 = 12 lines
+  // Layer 1 -> Layer 2 connections: 4 * 3 = 12 lines
+  // Total steps: 10 nodes + 24 lines = 34 steps
+  const sequence: ({ type: 'node'; index: number } | { type: 'line'; from: number; to: number })[] = [
+    { type: 'node', index: 0 }, { type: 'node', index: 1 }, { type: 'node', index: 2 },
+    // Input -> Hidden
+    { type: 'line', from: 0, to: 3 }, { type: 'line', from: 0, to: 4 }, { type: 'line', from: 0, to: 5 }, { type: 'line', from: 0, to: 6 },
+    { type: 'node', index: 3 }, { type: 'node', index: 4 }, { type: 'node', index: 5 }, { type: 'node', index: 6 },
+    { type: 'line', from: 1, to: 3 }, { type: 'line', from: 1, to: 4 }, { type: 'line', from: 1, to: 5 }, { type: 'line', from: 1, to: 6 },
+    { type: 'line', from: 2, to: 3 }, { type: 'line', from: 2, to: 4 }, { type: 'line', from: 2, to: 5 }, { type: 'line', from: 2, to: 6 },
+    // Hidden -> Output
+    { type: 'line', from: 3, to: 7 }, { type: 'line', from: 3, to: 8 }, { type: 'line', from: 3, to: 9 },
+    { type: 'node', index: 7 }, { type: 'node', index: 8 }, { type: 'node', index: 9 },
+    { type: 'line', from: 4, to: 7 }, { type: 'line', from: 4, to: 8 }, { type: 'line', from: 4, to: 9 },
+    { type: 'line', from: 5, to: 7 }, { type: 'line', from: 5, to: 8 }, { type: 'line', from: 5, to: 9 },
+    { type: 'line', from: 6, to: 7 }, { type: 'line', from: 6, to: 8 }, { type: 'line', from: 6, to: 9 },
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setStep((prev) => (prev >= sequence.length + 5 ? 0 : prev + 1));
-    }, 500);
+      setStep((prev) => (prev >= sequence.length + 10 ? 0 : prev + 1));
+    }, 200); // Faster ticks for the long sequence
     return () => clearInterval(interval);
   }, [sequence.length]);
 
   return (
     <div className="w-full h-full flex items-center justify-center p-4">
       <svg viewBox="0 0 100 110" className="w-full h-full overflow-visible">
-        {/* Draw all lines, only some will animate */}
+        {/* Background connections (faint) */}
         {sequence.map((item, i) => {
           if (item.type !== 'line') return null;
-          const from = nodes[item.from];
-          const to = nodes[item.to];
-          const active = i < step;
-          const isCurrent = i === step - 1;
-
           return (
-            <motion.line
-              key={`l-${i}`}
-              x1={from.x} y1={from.y} x2={to.x} y2={to.y}
-              stroke={active ? "#00f0ff" : "#ffffff05"}
-              strokeWidth={active ? 1 : 0.4}
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ 
-                pathLength: active ? 1 : 0,
-                opacity: active ? (isCurrent ? [0.2, 1, 0.8] : 0.8) : 0.1,
-              }}
-              transition={{ duration: 0.4 }}
+            <line
+              key={`bg-l-${i}`}
+              x1={nodes[item.from].x} y1={nodes[item.from].y}
+              x2={nodes[item.to].x} y2={nodes[item.to].y}
+              stroke="#ffffff"
+              strokeWidth={0.2}
+              opacity={0.05}
             />
           );
         })}
 
-        {/* Draw all nodes */}
+        {/* Active connections */}
+        {sequence.map((item, i) => {
+          if (item.type !== 'line') return null;
+          const active = i < step;
+          const isCurrent = i === step - 1;
+          if (!active) return null;
+
+          return (
+            <motion.line
+              key={`l-${i}`}
+              x1={nodes[item.from].x} y1={nodes[item.from].y}
+              x2={nodes[item.to].x} y2={nodes[item.to].y}
+              stroke="#00f0ff"
+              strokeWidth={isCurrent ? 1.5 : 0.6}
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 0.8 }}
+              transition={{ duration: 0.3 }}
+            />
+          );
+        })}
+
+        {/* Nodes */}
         {nodes.map((node, i) => {
           const firstOccurrence = sequence.findIndex(s => s.type === 'node' && s.index === i);
           const active = firstOccurrence !== -1 && firstOccurrence < step;
@@ -81,13 +91,13 @@ function NeuralNetwork() {
           return (
             <motion.circle
               key={`n-${i}`}
-              cx={node.x} cy={node.y} r={active ? 3 : 2.5}
+              cx={node.x} cy={node.y} r={active ? 3 : 2}
               fill={active ? "#00f0ff" : "#ffffff10"}
               animate={{
-                scale: isCurrent ? [1, 1.5, 1] : 1,
+                scale: isCurrent ? [1, 1.8, 1] : 1,
                 opacity: active ? 1 : 0.2,
               }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.3 }}
               style={{ filter: active ? "drop-shadow(0 0 6px #00f0ff)" : "none" }}
             />
           );
