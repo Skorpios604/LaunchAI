@@ -66,9 +66,17 @@ export default function AnimatedGenerateButton({
           ></path>
         </svg>
         <div className="ui-anim-txt-wrapper relative flex items-center whitespace-nowrap">
+          {/* Invisible sizer to establish wrapper width */}
+          <span className="invisible" aria-hidden="true">
+            {Array.from(labelIdle).map((ch, i) => (
+              <span key={i} className="inline-block" style={ch === ' ' ? { minWidth: '0.3em' } : undefined}>
+                {ch === ' ' ? '\u00A0' : ch}
+              </span>
+            ))}
+          </span>
           <div
             className={clsx(
-              "ui-anim-txt-1",
+              "ui-anim-txt-1 absolute left-0 top-0",
               generating ? "opacity-0" : "animate-[ui-appear_1s_ease-in-out_forwards]"
             )}
           >
@@ -283,7 +291,10 @@ export default function AnimatedGenerateButton({
         }
         .ui-anim-btn:active .ui-anim-letter {
           text-shadow: 0 0 1px hsla(var(--highlight-hue), 100%, 90%, 0.9);
-          animation: none;
+          animation:
+            ui-focused-letter 0.6s ease-in-out forwards,
+            ui-letter-anim 1.2s ease-in-out infinite;
+          animation-delay: 0s, 0.6s;
         }
 
         /* Letter stagger delays */
