@@ -37,7 +37,7 @@ function RocketLaunch() {
       >
         <div className="relative">
           <Rocket
-            className="text-[#00f0ff] drop-shadow-[0_0_12px_rgba(0,240,255,0.6)]"
+            className="text-[#00f0ff] -rotate-45 drop-shadow-[0_0_12px_rgba(0,240,255,0.6)]"
             size={40}
             strokeWidth={1.5}
           />
