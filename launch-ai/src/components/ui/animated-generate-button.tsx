@@ -60,6 +60,7 @@ export default function AnimatedGenerateButton({
           "rounded-[4px] px-4 py-2",
           "bg-[hsl(var(--background))] text-[hsl(var(--foreground))]",
           "border border-[hsl(var(--border))]/20",
+          "shadow-[0_2px_12px_rgba(255,255,255,0.1),0_2px_6px_rgba(0,0,0,0.4)]",
           "transition-[box-shadow,border,background-color] duration-400"
         )}
         style={
