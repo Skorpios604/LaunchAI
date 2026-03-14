@@ -236,8 +236,8 @@ export default function AnimatedGenerateButton({
             transform: scale(1);
           }
           50% {
-            transform: scale(2);
-            filter: blur(10px) brightness(150%)
+            transform: scale(1.4);
+            filter: blur(7px) brightness(150%)
               drop-shadow(-36px 12px 12px var(--highlight));
           }
         }
