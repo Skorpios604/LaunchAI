@@ -41,7 +41,7 @@ export default function AnimatedGenerateButton({
     btn.classList.add('ui-anim-clicked');
     timeoutRef.current = setTimeout(() => {
       btn.classList.remove('ui-anim-clicked');
-    }, 700);
+    }, 1400);
     onClick?.(e);
   }, [onClick]);
 
@@ -317,9 +317,9 @@ export default function AnimatedGenerateButton({
         .ui-anim-btn.ui-anim-clicked .ui-anim-letter {
           text-shadow: 0 0 1px hsla(var(--highlight-hue), 100%, 90%, 0.9);
           animation:
-            ui-focused-letter 0.6s ease-in-out forwards,
+            ui-focused-letter 1.2s ease-in-out forwards,
             ui-letter-anim 1.2s ease-in-out infinite;
-          animation-delay: 0s, 0.6s;
+          animation-delay: 0s, 1.2s;
         }
         .ui-anim-btn.ui-anim-clicked::before {
           box-shadow:
@@ -389,6 +389,37 @@ export default function AnimatedGenerateButton({
         .ui-anim-txt-1 .ui-anim-letter:nth-child(13),
         .ui-anim-txt-2 .ui-anim-letter:nth-child(13) {
           animation-delay: 0.96s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(14),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(14) {
+          animation-delay: 1.04s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(15),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(15) {
+          animation-delay: 1.12s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(16),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(16) {
+          animation-delay: 1.2s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(17),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(17) {
+          animation-delay: 1.28s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(18),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(18) {
+          animation-delay: 1.36s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(19),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(19) {
+          animation-delay: 1.44s;
+        }
+        .ui-anim-txt-1 .ui-anim-letter:nth-child(20),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(20) {
+          animation-delay: 1.52s;
+          .ui-anim-txt-1 .ui-anim-letter:nth-child(21),
+        .ui-anim-txt-2 .ui-anim-letter:nth-child(21) {
+          animation-delay: 1.60s;
         }
 
         /* Disabled */
