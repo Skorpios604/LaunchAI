@@ -189,7 +189,7 @@ function MentorshipPulse() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPulse((p) => (p + 1) % 100);
+      setPulse((p) => (p + 1) % 300); // 300-frame cycle (~4.8s)
     }, 16);
     return () => clearInterval(interval);
   }, []);
@@ -218,25 +218,7 @@ function MentorshipPulse() {
           />
         ))}
 
-        {/* Pulse dots traveling from mentor to students */}
-        {students.map((s, i) => {
-          const progress = ((pulse + i * 33) % 100) / 100;
-          const px = mentor.x + (s.x - mentor.x) * progress;
-          const py = mentor.y + (s.y - mentor.y) * progress;
-          return (
-            <circle
-              key={`pulse-${i}`}
-              cx={px}
-              cy={py}
-              r={2}
-              fill="#b026ff"
-              opacity={0.3 + progress * 0.7}
-              style={{ filter: "drop-shadow(0 0 3px #b026ff)" }}
-            />
-          );
-        })}
-
-        {/* Student nodes */}
+        {/* Student nodes (drawn first so pulse renders on top) */}
         {students.map((s, i) => (
           <g key={`student-${i}`}>
             <circle cx={s.x} cy={s.y} r={6} fill="#ffffff08" stroke="#ffffff20" strokeWidth={0.5} />
@@ -246,6 +228,50 @@ function MentorshipPulse() {
             </text>
           </g>
         ))}
+
+        {/* Pulse dots traveling from mentor to students and resting */}
+        {students.map((s, i) => {
+          const localPulse = (pulse + i * 100) % 300;
+          let progress = 0;
+          let opacity = 0;
+          let isResting = false;
+
+          if (localPulse < 80) {
+            // Traveling (80 frames = ~1.28s)
+            progress = localPulse / 80;
+            opacity = 0.3 + progress * 0.7; // Fade in as it moves
+          } else if (localPulse < 220) {
+            // Resting and glowing at the student (140 frames = ~2.24s)
+            progress = 1.0;
+            isResting = true;
+            opacity = 1.0;
+          } else if (localPulse < 260) {
+            // Fading out (40 frames = ~0.64s)
+            progress = 1.0;
+            isResting = true;
+            opacity = (260 - localPulse) / 40;
+          }
+
+          if (opacity <= 0) return null;
+
+          const px = mentor.x + (s.x - mentor.x) * progress;
+          const py = mentor.y + (s.y - mentor.y) * progress;
+          const radius = isResting ? 3 : 2; // Match the inner gray dot (r=3) when resting
+          // Pulse the drop shadow while resting for a dynamic glow effect
+          const blur = isResting ? 4 + 2 * Math.sin(localPulse * 0.15) : 3;
+
+          return (
+            <circle
+              key={`pulse-${i}`}
+              cx={px}
+              cy={py}
+              r={radius}
+              fill="#b026ff"
+              opacity={opacity}
+              style={{ filter: `drop-shadow(0 0 ${blur}px #b026ff)` }}
+            />
+          );
+        })}
 
         {/* Mentor node (larger, glowing) */}
         <circle cx={mentor.x} cy={mentor.y} r={9} fill="#b026ff15" stroke="#b026ff50" strokeWidth={1} />
