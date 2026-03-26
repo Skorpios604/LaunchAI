@@ -190,7 +190,7 @@ function MentorshipPulse() {
   useEffect(() => {
     const interval = setInterval(() => {
       setPulse((p) => (p + 1) % 100);
-    }, 80);
+    }, 16);
     return () => clearInterval(interval);
   }, []);
 
