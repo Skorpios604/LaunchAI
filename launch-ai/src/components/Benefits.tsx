@@ -205,18 +205,50 @@ function MentorshipPulse() {
     <div className="relative w-full h-full flex items-center justify-center">
       <svg viewBox="0 0 100 100" className="w-full h-full">
         {/* Connection lines from mentor to each student */}
-        {students.map((s, i) => (
-          <line
-            key={`line-${i}`}
-            x1={mentor.x}
-            y1={mentor.y}
-            x2={s.x}
-            y2={s.y}
-            stroke="#ffffff10"
-            strokeWidth={0.8}
-            strokeDasharray="2 2"
-          />
-        ))}
+        {students.map((s, i) => {
+          const localPulse = (pulse + i * 100) % 300;
+          let progress = 0;
+          let lineOpacity = 0;
+
+          if (localPulse < 80) {
+            progress = localPulse / 80;
+            lineOpacity = 0.3 + progress * 0.6;
+          } else if (localPulse < 220) {
+            progress = 1.0;
+            lineOpacity = 0.6 + 0.2 * Math.sin(localPulse * 0.15);
+          } else if (localPulse < 260) {
+            progress = 1.0;
+            lineOpacity = ((260 - localPulse) / 40) * 0.6;
+          }
+
+          return (
+            <g key={`line-group-${i}`}>
+              <line
+                x1={mentor.x}
+                y1={mentor.y}
+                x2={s.x}
+                y2={s.y}
+                stroke="#ffffff10"
+                strokeWidth={0.8}
+                strokeDasharray="2 2"
+              />
+              {/* Glowing animated line trail */}
+              {lineOpacity > 0 && (
+                <line
+                  x1={mentor.x}
+                  y1={mentor.y}
+                  x2={mentor.x + (s.x - mentor.x) * progress}
+                  y2={mentor.y + (s.y - mentor.y) * progress}
+                  stroke="#b026ff"
+                  strokeWidth={1}
+                  strokeDasharray="2 2"
+                  opacity={lineOpacity}
+                  style={{ filter: "drop-shadow(0 0 2px #b026ff)" }}
+                />
+              )}
+            </g>
+          );
+        })}
 
         {/* Student nodes (drawn first so pulse renders on top) */}
         {students.map((s, i) => (
