@@ -347,10 +347,7 @@ export default function Benefits() {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex-1 min-h-0">
-              <RocketLaunch />
-            </div>
-            <div className="mt-4 flex-shrink-0">
+            <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-8 h-8 bg-white/5 border border-white/10 rounded flex items-center justify-center text-[#00f0ff]">
                   <Rocket size={16} strokeWidth={1.5} />
@@ -364,6 +361,9 @@ export default function Benefits() {
                 agents, and data pipelines.
               </p>
             </div>
+            <div className="flex-1 min-h-0">
+              <RocketLaunch />
+            </div>
           </motion.div>
 
           {/* 2. GitHub Portfolio — Standard (2×1) */}
@@ -375,10 +375,7 @@ export default function Benefits() {
             transition={{ delay: 0.1, duration: 0.5 }}
             whileHover={{ scale: 0.98 }}
           >
-            <div className="flex-1 min-h-0">
-              <CommitGraph />
-            </div>
-            <div className="mt-4 flex-shrink-0">
+            <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-8 h-8 bg-white/5 border border-white/10 rounded flex items-center justify-center text-[#b026ff]">
                   <Github size={16} strokeWidth={1.5} />
@@ -392,6 +389,9 @@ export default function Benefits() {
                 that prove your skills to employers.
               </p>
             </div>
+            <div className="flex-1 min-h-0">
+              <CommitGraph />
+            </div>
           </motion.div>
 
           {/* 3. Team Collaboration — Standard (2×1) */}
@@ -403,10 +403,7 @@ export default function Benefits() {
             transition={{ delay: 0.2, duration: 0.5 }}
             whileHover={{ scale: 0.98 }}
           >
-            <div className="flex-1 min-h-0">
-              <TeamOrbit />
-            </div>
-            <div className="mt-4 flex-shrink-0">
+            <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-8 h-8 bg-white/5 border border-white/10 rounded flex items-center justify-center text-[#00f0ff]">
                   <Users size={16} strokeWidth={1.5} />
@@ -420,6 +417,9 @@ export default function Benefits() {
                 cross-functional teams of 5–7.
               </p>
             </div>
+            <div className="flex-1 min-h-0">
+              <TeamOrbit />
+            </div>
           </motion.div>
 
           {/* 4. Mentorship — Tall (2×2) */}
@@ -431,10 +431,7 @@ export default function Benefits() {
             transition={{ delay: 0.3, duration: 0.5 }}
             whileHover={{ scale: 1.02 }}
           >
-            <div className="flex-1 min-h-0">
-              <MentorshipPulse />
-            </div>
-            <div className="mt-4 flex-shrink-0">
+            <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-8 h-8 bg-white/5 border border-white/10 rounded flex items-center justify-center text-[#b026ff]">
                   <Sparkles size={16} strokeWidth={1.5} />
@@ -447,6 +444,9 @@ export default function Benefits() {
                 Get code reviews, architectural guidance, and career advice from
                 experienced engineers.
               </p>
+            </div>
+            <div className="flex-1 min-h-0">
+              <MentorshipPulse />
             </div>
           </motion.div>
         </div>

@@ -367,10 +367,7 @@ export default function TeamStructure() {
               CORE TEAM
             </div>
 
-            <div className="flex-1 min-h-0 mt-4">
-              <NeuralNetwork />
-            </div>
-            <div className="mt-auto flex-shrink-0">
+            <div className="mb-4 mt-8 flex-shrink-0 relative z-10">
               <div className="flex items-center gap-3 mb-2">
                 <Cpu className="text-[#00f0ff] drop-shadow-[0_0_8px_#00f0ff]" size={20} />
                 <div>
@@ -381,6 +378,9 @@ export default function TeamStructure() {
               <p className="text-gray-300 text-xs leading-relaxed">
                 Build LLM integrations, implement RAG systems, fine-tune models, and handle AI agent development.
               </p>
+            </div>
+            <div className="flex-1 min-h-0">
+              <NeuralNetwork />
             </div>
           </motion.div>
 
@@ -393,10 +393,7 @@ export default function TeamStructure() {
             transition={{ delay: 0.1, duration: 0.5 }}
             whileHover={{ scale: 0.98 }}
           >
-            <div className="flex-1 min-h-0">
-              <KanbanBoard />
-            </div>
-            <div className="mt-auto flex-shrink-0">
+            <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-1">
                 <User className="text-[#ff2a5f]" size={18} />
                 <div>
@@ -407,6 +404,9 @@ export default function TeamStructure() {
               <p className="text-gray-400 text-xs leading-relaxed">
                 Owns the product vision, manages sprints, and drives UX decisions.
               </p>
+            </div>
+            <div className="flex-1 min-h-0">
+              <KanbanBoard />
             </div>
           </motion.div>
 
@@ -419,10 +419,7 @@ export default function TeamStructure() {
             transition={{ delay: 0.2, duration: 0.5 }}
             whileHover={{ scale: 0.98 }}
           >
-            <div className="flex-1 min-h-0">
-              <ServerBlink />
-            </div>
-            <div className="mt-auto flex-shrink-0">
+            <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-1">
                 <Server className="text-[#00ff88]" size={18} />
                 <div>
@@ -433,6 +430,9 @@ export default function TeamStructure() {
               <p className="text-gray-400 text-xs leading-relaxed">
                 Designs APIs, builds scalable architectures, and develops microservices.
               </p>
+            </div>
+            <div className="flex-1 min-h-0">
+              <ServerBlink />
             </div>
           </motion.div>
 
@@ -445,10 +445,7 @@ export default function TeamStructure() {
             transition={{ delay: 0.3, duration: 0.5 }}
             whileHover={{ scale: 0.98 }}
           >
-            <div className="flex-1 min-h-0">
-              <LayoutMorph />
-            </div>
-            <div className="mt-auto flex-shrink-0">
+            <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-1">
                 <Layout className="text-[#fce000]" size={18} />
                 <div>
@@ -459,6 +456,9 @@ export default function TeamStructure() {
               <p className="text-gray-400 text-xs leading-relaxed">
                 Builds responsive, interactive UIs with modern frameworks.
               </p>
+            </div>
+            <div className="flex-1 min-h-0">
+              <LayoutMorph />
             </div>
           </motion.div>
 
@@ -471,10 +471,7 @@ export default function TeamStructure() {
             transition={{ delay: 0.4, duration: 0.5 }}
             whileHover={{ scale: 0.98 }}
           >
-            <div className="flex-1 min-h-0">
-              <DataFunnel />
-            </div>
-            <div className="mt-auto flex-shrink-0">
+            <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-1">
                 <Database className="text-[#b026ff]" size={18} />
                 <div>
@@ -485,6 +482,9 @@ export default function TeamStructure() {
               <p className="text-gray-400 text-xs leading-relaxed">
                 Builds data pipelines, manages vector databases, and handles ETL workflows.
               </p>
+            </div>
+            <div className="flex-1 min-h-0">
+              <DataFunnel />
             </div>
           </motion.div>
 
