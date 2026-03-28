@@ -352,7 +352,7 @@ export default function TeamStructure() {
 
           {/* AI/ML Engineers — Featured Tall (2-col, 2-row) */}
           <motion.div
-            className="md:col-span-2 md:row-span-2 tech-glass bg-gradient-to-b from-[#0a66c2]/10 to-transparent p-6 flex flex-col relative overflow-hidden border border-[#0a66c2]/40 cursor-pointer rounded-xl shadow-[0_0_30px_rgba(10,102,194,0.1)]"
+            className="md:col-span-2 md:row-span-2 tech-glass-card bg-gradient-to-b from-[#0a66c2]/10 to-transparent p-6 flex flex-col relative overflow-hidden border border-[#0a66c2]/40 cursor-pointer rounded-xl shadow-[0_0_30px_rgba(10,102,194,0.1)]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -386,7 +386,7 @@ export default function TeamStructure() {
 
           {/* Product Lead — Kanban Board */}
           <motion.div
-            className="md:col-span-2 tech-glass p-6 flex flex-col relative overflow-hidden border-t-2 border-t-[#ff2a5f] cursor-pointer rounded-xl"
+            className="md:col-span-2 tech-glass-card p-6 flex flex-col relative overflow-hidden border-t-2 border-t-[#ff2a5f] cursor-pointer rounded-xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -412,7 +412,7 @@ export default function TeamStructure() {
 
           {/* Backend Engineer — Server Blink */}
           <motion.div
-            className="md:col-span-2 tech-glass p-6 flex flex-col relative overflow-hidden border-t-2 border-t-[#00ff88] cursor-pointer rounded-xl"
+            className="md:col-span-2 tech-glass-card p-6 flex flex-col relative overflow-hidden border-t-2 border-t-[#00ff88] cursor-pointer rounded-xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -438,7 +438,7 @@ export default function TeamStructure() {
 
           {/* Frontend Engineer — Layout Morph */}
           <motion.div
-            className="md:col-span-2 tech-glass p-6 flex flex-col relative overflow-hidden border-t-2 border-t-[#fce000] cursor-pointer rounded-xl"
+            className="md:col-span-2 tech-glass-card p-6 flex flex-col relative overflow-hidden border-t-2 border-t-[#fce000] cursor-pointer rounded-xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -464,7 +464,7 @@ export default function TeamStructure() {
 
           {/* Data Engineer — Data Funnel */}
           <motion.div
-            className="md:col-span-2 tech-glass p-6 flex flex-col relative overflow-hidden border-t-2 border-t-[#b026ff] cursor-pointer rounded-xl"
+            className="md:col-span-2 tech-glass-card p-6 flex flex-col relative overflow-hidden border-t-2 border-t-[#b026ff] cursor-pointer rounded-xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
