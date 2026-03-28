@@ -359,10 +359,10 @@ export default function TeamStructure() {
             whileHover={{ scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)", transition: { duration: 0.1, ease: "easeOut", delay: 0 } }}
             transition={{ duration: 0.5, scale: { duration: 0.1, ease: "easeOut", delay: 0 } }}
           >
-            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#0a66c2]" />
-            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#0a66c2]" />
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#0a66c2]" />
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#0a66c2]" />
+            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#0a66c2] rounded-tl-xl" />
+            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#0a66c2] rounded-tr-xl" />
+            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#0a66c2] rounded-bl-xl" />
+            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#0a66c2] rounded-br-xl" />
             <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-[#0a66c2] text-white font-bold text-[9px] uppercase tracking-widest py-1 px-3 rounded-b shadow-[0_0_10px_#0a66c2]">
               CORE TEAM
             </div>
