@@ -345,7 +345,7 @@ export default function Benefits() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.02, transition: { duration: 0.1, ease: "easeOut", delay: 0 } }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, scale: { duration: 0.1, ease: "easeOut", delay: 0 } }}
           >
             <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-2">
@@ -372,7 +372,7 @@ export default function Benefits() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.5 }}
+            transition={{ delay: 0.1, duration: 0.5, scale: { duration: 0.1, ease: "easeOut", delay: 0 } }}
             whileHover={{ scale: 1.02, transition: { duration: 0.1, ease: "easeOut", delay: 0 } }}
           >
             <div className="mb-4 flex-shrink-0">
@@ -400,7 +400,7 @@ export default function Benefits() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5, scale: { duration: 0.1, ease: "easeOut", delay: 0 } }}
             whileHover={{ scale: 1.02, transition: { duration: 0.1, ease: "easeOut", delay: 0 } }}
           >
             <div className="mb-4 flex-shrink-0">
@@ -428,7 +428,7 @@ export default function Benefits() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.5 }}
+            transition={{ delay: 0.3, duration: 0.5, scale: { duration: 0.1, ease: "easeOut", delay: 0 } }}
             whileHover={{ scale: 1.02, transition: { duration: 0.1, ease: "easeOut", delay: 0 } }}
           >
             <div className="mb-4 flex-shrink-0">
