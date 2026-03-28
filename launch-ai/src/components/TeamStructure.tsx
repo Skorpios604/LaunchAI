@@ -356,7 +356,7 @@ export default function TeamStructure() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)", transition: { duration: 0.2, ease: "easeOut", delay: 0 } }}
+            whileHover={{ scale: 1.02, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)", transition: { duration: 0.1, ease: "easeOut", delay: 0 } }}
             transition={{ duration: 0.5 }}
           >
             <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#0a66c2]" />
@@ -391,7 +391,7 @@ export default function TeamStructure() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            whileHover={{ scale: 0.98, transition: { duration: 0.2, ease: "easeOut", delay: 0 } }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.1, ease: "easeOut", delay: 0 } }}
           >
             <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-1">
@@ -417,7 +417,7 @@ export default function TeamStructure() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            whileHover={{ scale: 0.98, transition: { duration: 0.2, ease: "easeOut", delay: 0 } }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.1, ease: "easeOut", delay: 0 } }}
           >
             <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-1">
@@ -443,7 +443,7 @@ export default function TeamStructure() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            whileHover={{ scale: 0.98, transition: { duration: 0.2, ease: "easeOut", delay: 0 } }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.1, ease: "easeOut", delay: 0 } }}
           >
             <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-1">
@@ -469,7 +469,7 @@ export default function TeamStructure() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            whileHover={{ scale: 0.98, transition: { duration: 0.2, ease: "easeOut", delay: 0 } }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.1, ease: "easeOut", delay: 0 } }}
           >
             <div className="mb-4 flex-shrink-0">
               <div className="flex items-center gap-3 mb-1">
