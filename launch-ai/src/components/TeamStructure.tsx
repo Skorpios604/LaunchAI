@@ -371,11 +371,11 @@ export default function TeamStructure() {
               <div className="flex items-center gap-3 mb-2">
                 <Cpu className="text-[#00f0ff] drop-shadow-[0_0_8px_#00f0ff]" size={20} />
                 <div>
-                  <div className="text-[10px] font-bold text-[#00f0ff] tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron)" }}>AI / ML Engineers</div>
+                  <div className="text-xs font-bold text-[#00f0ff] tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron)" }}>AI / ML Engineers</div>
                   <span className="text-white font-bold">2–3 Members</span>
                 </div>
               </div>
-              <p className="text-gray-300 text-xs leading-relaxed">
+              <p className="text-gray-300 text-sm leading-relaxed">
                 Build LLM integrations, implement RAG systems, fine-tune models, and handle AI agent development.
               </p>
             </div>
@@ -397,11 +397,11 @@ export default function TeamStructure() {
               <div className="flex items-center gap-3 mb-1">
                 <User className="text-[#ff2a5f]" size={18} />
                 <div>
-                  <div className="text-[10px] font-bold text-[#ff2a5f] tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron)" }}>Product Lead</div>
+                  <div className="text-xs font-bold text-[#ff2a5f] tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron)" }}>Product Lead</div>
                   <span className="text-white font-bold text-sm">1 Member</span>
                 </div>
               </div>
-              <p className="text-gray-400 text-xs leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Owns the product vision, manages sprints, and drives UX decisions.
               </p>
             </div>
@@ -423,11 +423,11 @@ export default function TeamStructure() {
               <div className="flex items-center gap-3 mb-1">
                 <Server className="text-[#00ff88]" size={18} />
                 <div>
-                  <div className="text-[10px] font-bold text-[#00ff88] tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron)" }}>Backend Engineer</div>
+                  <div className="text-xs font-bold text-[#00ff88] tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron)" }}>Backend Engineer</div>
                   <span className="text-white font-bold text-sm">1 Member</span>
                 </div>
               </div>
-              <p className="text-gray-400 text-xs leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Designs APIs, builds scalable architectures, and develops microservices.
               </p>
             </div>
@@ -449,11 +449,11 @@ export default function TeamStructure() {
               <div className="flex items-center gap-3 mb-1">
                 <Layout className="text-[#fce000]" size={18} />
                 <div>
-                  <div className="text-[10px] font-bold text-[#fce000] tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron)" }}>Frontend Engineer</div>
+                  <div className="text-xs font-bold text-[#fce000] tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron)" }}>Frontend Engineer</div>
                   <span className="text-white font-bold text-sm">1 Member</span>
                 </div>
               </div>
-              <p className="text-gray-400 text-xs leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Builds responsive, interactive UIs with modern frameworks.
               </p>
             </div>
@@ -475,11 +475,11 @@ export default function TeamStructure() {
               <div className="flex items-center gap-3 mb-1">
                 <Database className="text-[#b026ff]" size={18} />
                 <div>
-                  <div className="text-[10px] font-bold text-[#b026ff] tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron)" }}>Data Engineer</div>
+                  <div className="text-xs font-bold text-[#b026ff] tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron)" }}>Data Engineer</div>
                   <span className="text-white font-bold text-sm">1 Member</span>
                 </div>
               </div>
-              <p className="text-gray-400 text-xs leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Builds data pipelines, manages vector databases, and handles ETL workflows.
               </p>
             </div>

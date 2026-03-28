@@ -352,11 +352,11 @@ export default function Benefits() {
                 <div className="w-8 h-8 bg-white/5 border border-white/10 rounded flex items-center justify-center text-[#00f0ff]">
                   <Rocket size={16} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-sm font-semibold text-white tracking-wide uppercase">
+                <h3 className="text-base font-semibold text-white tracking-wide uppercase">
                   Real Project Experience
                 </h3>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-400 text-base leading-relaxed">
                 Build and deploy production AI apps — LLM tools, ML models, AI
                 agents, and data pipelines.
               </p>
@@ -380,11 +380,11 @@ export default function Benefits() {
                 <div className="w-8 h-8 bg-white/5 border border-white/10 rounded flex items-center justify-center text-[#b026ff]">
                   <Github size={16} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-sm font-semibold text-white tracking-wide uppercase">
+                <h3 className="text-base font-semibold text-white tracking-wide uppercase">
                   GitHub Portfolio
                 </h3>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-400 text-base leading-relaxed">
                 Walk away with open-source contributions and shipped products
                 that prove your skills to employers.
               </p>
@@ -408,11 +408,11 @@ export default function Benefits() {
                 <div className="w-8 h-8 bg-white/5 border border-white/10 rounded flex items-center justify-center text-[#00f0ff]">
                   <Users size={16} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-sm font-semibold text-white tracking-wide uppercase">
+                <h3 className="text-base font-semibold text-white tracking-wide uppercase">
                   Team Collaboration
                 </h3>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-400 text-base leading-relaxed">
                 Work alongside engineers, designers, and product leads in
                 cross-functional teams of 5–7.
               </p>
@@ -436,11 +436,11 @@ export default function Benefits() {
                 <div className="w-8 h-8 bg-white/5 border border-white/10 rounded flex items-center justify-center text-[#b026ff]">
                   <Sparkles size={16} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-sm font-semibold text-white tracking-wide uppercase">
+                <h3 className="text-base font-semibold text-white tracking-wide uppercase">
                   Mentorship
                 </h3>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-400 text-base leading-relaxed">
                 Get code reviews, architectural guidance, and career advice from
                 experienced engineers.
               </p>
